@@ -55,10 +55,3 @@
     Delimiters, variables, IF-THEN statements, FOR loops, macros.
 </details>
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
