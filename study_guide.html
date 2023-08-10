@@ -1,676 +1,718 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Study guide</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
+	/* cspell:disable-file */
+	/* webkit printing magic: print all background colors */
+	html {
+		-webkit-print-color-adjust: exact;
 	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
+	* {
+		box-sizing: border-box;
+		-webkit-print-color-adjust: exact;
 	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
 	
-</style></head><body><article id="a60351f4-d339-48d9-8de3-ddba125b680f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📜</span></div><h1 class="page-title">Study guide</h1><p class="page-description"></p></header><div class="page-body"><ul id="519abfe0-5bcd-4735-a715-b3e79e7905b1" class="toggle"><li><details open=""><summary><strong>the 5 types of materializations</strong></summary><ul id="ef968023-62df-462b-ba63-8ae50dd31f28" class="bulleted-list"><li style="list-style-type:disc">🔍 views</li></ul><ul id="7372c7b0-c12a-4850-b2b1-81b8064350a0" class="bulleted-list"><li style="list-style-type:disc">⚒️ tables</li></ul><ul id="6c037923-7d58-4955-ad33-072eb3b59965" class="bulleted-list"><li style="list-style-type:disc">📚 incremental model</li></ul><ul id="d330c312-93d9-4d86-aae6-d6d719b9316a" class="bulleted-list"><li style="list-style-type:disc">ephemeral</li></ul><ul id="9b99e8d3-90b9-4409-988d-dbe36125aa4c" class="bulleted-list"><li style="list-style-type:disc">python</li></ul><p id="59100d0d-d6fe-45f7-a801-7ea91671319d" class=""><code>source: https://docs.getdbt.com/docs/build/materializations#materializations</code></p></details></li></ul><ul id="01fe06a8-7f02-4e00-b6b9-bd75d94c8656" class="toggle"><li><details open=""><summary><strong>Jinja basic concepts</strong></summary><ul id="1003c13a-e9d3-4c73-baa0-4b9d8f796356" class="bulleted-list"><li style="list-style-type:disc">Delimiters</li></ul><ul id="b5900a71-0b26-4001-9686-6f74b626cc82" class="bulleted-list"><li style="list-style-type:disc">variables</li></ul><ul id="8bad9c98-70ea-4993-9069-c1723b5ca6f1" class="bulleted-list"><li style="list-style-type:disc">IF-THEN statements</li></ul><ul id="33be3fdd-6cdf-4d7a-8cce-73edcb716d80" class="bulleted-list"><li style="list-style-type:disc">FOR loops <ul id="f0fd520c-396a-4386-b352-f7b9fed5bf21" class="bulleted-list"><li style="list-style-type:circle"><code>{% for my_item in my_collection %} {% endfor %} </code></li></ul></li></ul><ul id="ee4d6759-6546-486a-9683-acdf2c3792de" class="bulleted-list"><li style="list-style-type:disc">macros</li></ul></details></li></ul><ul id="6521612e-374f-465d-9fad-b98aae28e509" class="toggle"><li><details open=""><summary><strong>Hooks</strong></summary></details></li></ul><ul id="ac1a2b3f-38f4-4d8b-93dc-df893774d97e" class="toggle"><li><details open=""><summary><strong>SQL</strong></summary></details></li></ul></div></article></body></html>
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	@media only screen {
+		body {
+			margin: 2em auto;
+			max-width: 900px;
+			color: rgb(55, 53, 47);
+		}
+	}
+	
+	body {
+		line-height: 1.5;
+		white-space: pre-wrap;
+	}
+	
+	a,
+	a.visited {
+		color: inherit;
+		text-decoration: underline;
+	}
+	
+	.pdf-relative-link-path {
+		font-size: 80%;
+		color: #444;
+	}
+	
+	h1,
+	h2,
+	h3 {
+		letter-spacing: -0.01em;
+		line-height: 1.2;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+	
+	.page-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-top: 0;
+		margin-bottom: 0.75em;
+	}
+	
+	h1 {
+		font-size: 1.875rem;
+		margin-top: 1.875rem;
+	}
+	
+	h2 {
+		font-size: 1.5rem;
+		margin-top: 1.5rem;
+	}
+	
+	h3 {
+		font-size: 1.25rem;
+		margin-top: 1.25rem;
+	}
+	
+	.source {
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		padding: 1.5em;
+		word-break: break-all;
+	}
+	
+	.callout {
+		border-radius: 3px;
+		padding: 1rem;
+	}
+	
+	figure {
+		margin: 1.25em 0;
+		page-break-inside: avoid;
+	}
+	
+	figcaption {
+		opacity: 0.5;
+		font-size: 85%;
+		margin-top: 0.5em;
+	}
+	
+	mark {
+		background-color: transparent;
+	}
+	
+	.indented {
+		padding-left: 1.5em;
+	}
+	
+	hr {
+		background: transparent;
+		display: block;
+		width: 100%;
+		height: 1px;
+		visibility: visible;
+		border: none;
+		border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+	}
+	
+	img {
+		max-width: 100%;
+	}
+	
+	@media only print {
+		img {
+			max-height: 100vh;
+			object-fit: contain;
+		}
+	}
+	
+	@page {
+		margin: 1in;
+	}
+	
+	.collection-content {
+		font-size: 0.875rem;
+	}
+	
+	.column-list {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.column {
+		padding: 0 1em;
+	}
+	
+	.column:first-child {
+		padding-left: 0;
+	}
+	
+	.column:last-child {
+		padding-right: 0;
+	}
+	
+	.table_of_contents-item {
+		display: block;
+		font-size: 0.875rem;
+		line-height: 1.3;
+		padding: 0.125rem;
+	}
+	
+	.table_of_contents-indent-1 {
+		margin-left: 1.5rem;
+	}
+	
+	.table_of_contents-indent-2 {
+		margin-left: 3rem;
+	}
+	
+	.table_of_contents-indent-3 {
+		margin-left: 4.5rem;
+	}
+	
+	.table_of_contents-link {
+		text-decoration: none;
+		opacity: 0.7;
+		border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+	}
+	
+	table,
+	th,
+	td {
+		border: 1px solid rgba(55, 53, 47, 0.09);
+		border-collapse: collapse;
+	}
+	
+	table {
+		border-left: none;
+		border-right: none;
+	}
+	
+	th,
+	td {
+		font-weight: normal;
+		padding: 0.25em 0.5em;
+		line-height: 1.5;
+		min-height: 1.5em;
+		text-align: left;
+	}
+	
+	th {
+		color: rgba(55, 53, 47, 0.6);
+	}
+	
+	ol,
+	ul {
+		margin: 0;
+		margin-block-start: 0.6em;
+		margin-block-end: 0.6em;
+	}
+	
+	li > ol:first-child,
+	li > ul:first-child {
+		margin-block-start: 0.6em;
+	}
+	
+	ul > li {
+		list-style: disc;
+	}
+	
+	ul.to-do-list {
+		padding-inline-start: 0;
+	}
+	
+	ul.to-do-list > li {
+		list-style: none;
+	}
+	
+	.to-do-children-checked {
+		text-decoration: line-through;
+		opacity: 0.375;
+	}
+	
+	ul.toggle > li {
+		list-style: none;
+	}
+	
+	ul {
+		padding-inline-start: 1.7em;
+	}
+	
+	ul > li {
+		padding-left: 0.1em;
+	}
+	
+	ol {
+		padding-inline-start: 1.6em;
+	}
+	
+	ol > li {
+		padding-left: 0.2em;
+	}
+	
+	.mono ol {
+		padding-inline-start: 2em;
+	}
+	
+	.mono ol > li {
+		text-indent: -0.4em;
+	}
+	
+	.toggle {
+		padding-inline-start: 0em;
+		list-style-type: none;
+	}
+	
+	/* Indent toggle children */
+	.toggle > li > details {
+		padding-left: 1.7em;
+	}
+	
+	.toggle > li > details > summary {
+		margin-left: -1.1em;
+	}
+	
+	.selected-value {
+		display: inline-block;
+		padding: 0 0.5em;
+		background: rgba(206, 205, 202, 0.5);
+		border-radius: 3px;
+		margin-right: 0.5em;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+		white-space: nowrap;
+	}
+	
+	.collection-title {
+		display: inline-block;
+		margin-right: 1em;
+	}
+	
+	.page-description {
+		margin-bottom: 2em;
+	}
+	
+	.simple-table {
+		margin-top: 1em;
+		font-size: 0.875rem;
+		empty-cells: show;
+	}
+	.simple-table td {
+		height: 29px;
+		min-width: 120px;
+	}
+	
+	.simple-table th {
+		height: 29px;
+		min-width: 120px;
+	}
+	
+	.simple-table-header-color {
+		background: rgb(247, 246, 243);
+		color: black;
+	}
+	.simple-table-header {
+		font-weight: 500;
+	}
+	
+	time {
+		opacity: 0.5;
+	}
+	
+	.icon {
+		display: inline-block;
+		max-width: 1.2em;
+		max-height: 1.2em;
+		text-decoration: none;
+		vertical-align: text-bottom;
+		margin-right: 0.5em;
+	}
+	
+	img.icon {
+		border-radius: 3px;
+	}
+	
+	.user-icon {
+		width: 1.5em;
+		height: 1.5em;
+		border-radius: 100%;
+		margin-right: 0.5rem;
+	}
+	
+	.user-icon-inner {
+		font-size: 0.8em;
+	}
+	
+	.text-icon {
+		border: 1px solid #000;
+		text-align: center;
+	}
+	
+	.page-cover-image {
+		display: block;
+		object-fit: cover;
+		width: 100%;
+		max-height: 30vh;
+	}
+	
+	.page-header-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	
+	.page-header-icon-with-cover {
+		margin-top: -0.72em;
+		margin-left: 0.07em;
+	}
+	
+	.page-header-icon img {
+		border-radius: 3px;
+	}
+	
+	.link-to-page {
+		margin: 1em 0;
+		padding: 0;
+		border: none;
+		font-weight: 500;
+	}
+	
+	p > .user {
+		opacity: 0.5;
+	}
+	
+	td > .user,
+	td > time {
+		white-space: nowrap;
+	}
+	
+	input[type="checkbox"] {
+		transform: scale(1.5);
+		margin-right: 0.6em;
+		vertical-align: middle;
+	}
+	
+	p {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	
+	.image {
+		border: none;
+		margin: 1.5em 0;
+		padding: 0;
+		border-radius: 0;
+		text-align: center;
+	}
+	
+	.code,
+	code {
+		background: rgba(135, 131, 120, 0.15);
+		border-radius: 3px;
+		padding: 0.2em 0.4em;
+		border-radius: 3px;
+		font-size: 85%;
+		tab-size: 2;
+	}
+	
+	code {
+		color: #eb5757;
+	}
+	
+	.code {
+		padding: 1.5em 1em;
+	}
+	
+	.code-wrap {
+		white-space: pre-wrap;
+		word-break: break-all;
+	}
+	
+	.code > code {
+		background: none;
+		padding: 0;
+		font-size: 100%;
+		color: inherit;
+	}
+	
+	blockquote {
+		font-size: 1.25em;
+		margin: 1em 0;
+		padding-left: 1em;
+		border-left: 3px solid rgb(55, 53, 47);
+	}
+	
+	.bookmark {
+		text-decoration: none;
+		max-height: 8em;
+		padding: 0;
+		display: flex;
+		width: 100%;
+		align-items: stretch;
+	}
+	
+	.bookmark-title {
+		font-size: 0.85em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		height: 1.75em;
+		white-space: nowrap;
+	}
+	
+	.bookmark-text {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.bookmark-info {
+		flex: 4 1 180px;
+		padding: 12px 14px 14px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+	.bookmark-image {
+		width: 33%;
+		flex: 1 1 180px;
+		display: block;
+		position: relative;
+		object-fit: cover;
+		border-radius: 1px;
+	}
+	
+	.bookmark-description {
+		color: rgba(55, 53, 47, 0.6);
+		font-size: 0.75em;
+		overflow: hidden;
+		max-height: 4.5em;
+		word-break: break-word;
+	}
+	
+	.bookmark-href {
+		font-size: 0.75em;
+		margin-top: 0.25em;
+	}
+	
+	.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+	.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+	.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+	.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+	.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+	.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+	.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+	.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+	.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+	.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+	.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+	.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+	.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+	.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+	.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+	.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+	.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+	.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+	.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+	.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+	.highlight-default {
+		color: rgba(55, 53, 47, 1);
+	}
+	.highlight-gray {
+		color: rgba(120, 119, 116, 1);
+		fill: rgba(120, 119, 116, 1);
+	}
+	.highlight-brown {
+		color: rgba(159, 107, 83, 1);
+		fill: rgba(159, 107, 83, 1);
+	}
+	.highlight-orange {
+		color: rgba(217, 115, 13, 1);
+		fill: rgba(217, 115, 13, 1);
+	}
+	.highlight-yellow {
+		color: rgba(203, 145, 47, 1);
+		fill: rgba(203, 145, 47, 1);
+	}
+	.highlight-teal {
+		color: rgba(68, 131, 97, 1);
+		fill: rgba(68, 131, 97, 1);
+	}
+	.highlight-blue {
+		color: rgba(51, 126, 169, 1);
+		fill: rgba(51, 126, 169, 1);
+	}
+	.highlight-purple {
+		color: rgba(144, 101, 176, 1);
+		fill: rgba(144, 101, 176, 1);
+	}
+	.highlight-pink {
+		color: rgba(193, 76, 138, 1);
+		fill: rgba(193, 76, 138, 1);
+	}
+	.highlight-red {
+		color: rgba(212, 76, 71, 1);
+		fill: rgba(212, 76, 71, 1);
+	}
+	.highlight-gray_background {
+		background: rgba(241, 241, 239, 1);
+	}
+	.highlight-brown_background {
+		background: rgba(244, 238, 238, 1);
+	}
+	.highlight-orange_background {
+		background: rgba(251, 236, 221, 1);
+	}
+	.highlight-yellow_background {
+		background: rgba(251, 243, 219, 1);
+	}
+	.highlight-teal_background {
+		background: rgba(237, 243, 236, 1);
+	}
+	.highlight-blue_background {
+		background: rgba(231, 243, 248, 1);
+	}
+	.highlight-purple_background {
+		background: rgba(244, 240, 247, 0.8);
+	}
+	.highlight-pink_background {
+		background: rgba(249, 238, 243, 0.8);
+	}
+	.highlight-red_background {
+		background: rgba(253, 235, 236, 1);
+	}
+	.block-color-default {
+		color: inherit;
+		fill: inherit;
+	}
+	.block-color-gray {
+		color: rgba(120, 119, 116, 1);
+		fill: rgba(120, 119, 116, 1);
+	}
+	.block-color-brown {
+		color: rgba(159, 107, 83, 1);
+		fill: rgba(159, 107, 83, 1);
+	}
+	.block-color-orange {
+		color: rgba(217, 115, 13, 1);
+		fill: rgba(217, 115, 13, 1);
+	}
+	.block-color-yellow {
+		color: rgba(203, 145, 47, 1);
+		fill: rgba(203, 145, 47, 1);
+	}
+	.block-color-teal {
+		color: rgba(68, 131, 97, 1);
+		fill: rgba(68, 131, 97, 1);
+	}
+	.block-color-blue {
+		color: rgba(51, 126, 169, 1);
+		fill: rgba(51, 126, 169, 1);
+	}
+	.block-color-purple {
+		color: rgba(144, 101, 176, 1);
+		fill: rgba(144, 101, 176, 1);
+	}
+	.block-color-pink {
+		color: rgba(193, 76, 138, 1);
+		fill: rgba(193, 76, 138, 1);
+	}
+	.block-color-red {
+		color: rgba(212, 76, 71, 1);
+		fill: rgba(212, 76, 71, 1);
+	}
+	.block-color-gray_background {
+		background: rgba(241, 241, 239, 1);
+	}
+	.block-color-brown_background {
+		background: rgba(244, 238, 238, 1);
+	}
+	.block-color-orange_background {
+		background: rgba(251, 236, 221, 1);
+	}
+	.block-color-yellow_background {
+		background: rgba(251, 243, 219, 1);
+	}
+	.block-color-teal_background {
+		background: rgba(237, 243, 236, 1);
+	}
+	.block-color-blue_background {
+		background: rgba(231, 243, 248, 1);
+	}
+	.block-color-purple_background {
+		background: rgba(244, 240, 247, 0.8);
+	}
+	.block-color-pink_background {
+		background: rgba(249, 238, 243, 0.8);
+	}
+	.block-color-red_background {
+		background: rgba(253, 235, 236, 1);
+	}
+	.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+	.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+	.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+	.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+	.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+	.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+	.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+	.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+	.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+	.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+	.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+	.select-value-color-pageGlass { background-color: undefined; }
+	.select-value-color-washGlass { background-color: undefined; }
+	
+	.checkbox {
+		display: inline-flex;
+		vertical-align: text-bottom;
+		width: 16;
+		height: 16;
+		background-size: 16px;
+		margin-left: 2px;
+		margin-right: 5px;
+	}
+	
+	.checkbox-on {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+	}
+	
+	.checkbox-off {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+	}
+		
+	</style></head><body><article id="a60351f4-d339-48d9-8de3-ddba125b680f" class="page sans"><header><img class="page-cover-image" src="https://www.getdbt.com/ui/img/homepage/home-hero-ship-faster@2x.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.getdbt.com/ui/img/social/apple-touch-icon-149x149.png"/></div><h1 class="page-title">Study guide</h1><p class="page-description"></p></header><div class="page-body"><p id="e917f1af-3f10-4384-b2fa-a7e3b5c89875" class="">
+	</p><h1 id="519abfe0-5bcd-4735-a715-b3e79e7905b1" class="">Study Guide</h1><nav id="3991ad78-86d8-4b61-87dd-33ed21c425dd" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#519abfe0-5bcd-4735-a715-b3e79e7905b1">Study Guide</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fd4977c1-bb6d-4974-98fa-d3c9a41f3f38">Study Content</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#17a3c3af-f951-4850-b3b7-ede29e416ce5">Grafiken</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1d4d38dc-7a63-4b5e-a852-7ab3e58a8a4d">Flashcards</a></div></nav><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Study Content</summary><div class="indented"><ul id="b9b8eec3-787a-4f49-b456-a827a93f4176" class="toggle"><li><details open=""><summary><strong>the 5 types of materializations</strong></summary><ul id="ef968023-62df-462b-ba63-8ae50dd31f28" class="bulleted-list"><li style="list-style-type:disc">🔍 views</li></ul><ul id="7372c7b0-c12a-4850-b2b1-81b8064350a0" class="bulleted-list"><li style="list-style-type:disc">⚒️ tables</li></ul><ul id="6c037923-7d58-4955-ad33-072eb3b59965" class="bulleted-list"><li style="list-style-type:disc">📚 incremental model</li></ul><ul id="d330c312-93d9-4d86-aae6-d6d719b9316a" class="bulleted-list"><li style="list-style-type:disc">ephemeral</li></ul><ul id="9b99e8d3-90b9-4409-988d-dbe36125aa4c" class="bulleted-list"><li style="list-style-type:disc">python</li></ul><p id="59100d0d-d6fe-45f7-a801-7ea91671319d" class=""><code>source: https://docs.getdbt.com/docs/build/materializations#materializations</code></p></details></li></ul><ul id="01fe06a8-7f02-4e00-b6b9-bd75d94c8656" class="toggle"><li><details open=""><summary><strong>Jinja basic concepts</strong></summary><ul id="1003c13a-e9d3-4c73-baa0-4b9d8f796356" class="bulleted-list"><li style="list-style-type:disc">Delimiters</li></ul><ul id="b5900a71-0b26-4001-9686-6f74b626cc82" class="bulleted-list"><li style="list-style-type:disc">variables</li></ul><ul id="8bad9c98-70ea-4993-9069-c1723b5ca6f1" class="bulleted-list"><li style="list-style-type:disc">IF-THEN statements</li></ul><ul id="33be3fdd-6cdf-4d7a-8cce-73edcb716d80" class="bulleted-list"><li style="list-style-type:disc">FOR loops <ul id="f0fd520c-396a-4386-b352-f7b9fed5bf21" class="bulleted-list"><li style="list-style-type:circle"><code>{% for my_item in my_collection %} {% endfor %} </code></li></ul></li></ul><ul id="ee4d6759-6546-486a-9683-acdf2c3792de" class="bulleted-list"><li style="list-style-type:disc">macros</li></ul><p id="ace2e0f0-dd74-452a-9536-7e5260666731" class=""><code>source: </code><code><a href="https://docs.getdbt.com/docs/build/jinja-macros">https://docs.getdbt.com/docs/build/jinja-macros</a></code></p></details></li></ul><ul id="6521612e-374f-465d-9fad-b98aae28e509" class="toggle"><li><details open=""><summary><strong>Hooks</strong></summary><ul id="5037b001-ca94-4c4a-be29-a9c40be6c09e" class="bulleted-list"><li style="list-style-type:disc"><code>pre-hook</code>: executed <em>before</em> a model, seed or snapshot is built.</li></ul><ul id="391238d4-09d6-4c83-a2af-ead8344695d6" class="bulleted-list"><li style="list-style-type:disc"><code>post-hook</code>: executed <em>after</em> a model, seed or snapshot is built.</li></ul><ul id="c72de9af-e675-47ad-8f83-80e8383906ae" class="bulleted-list"><li style="list-style-type:disc"><code>on-run-start</code>: executed at the <em>start</em> of <code>dbt run</code>, <code>dbt test</code>, <code>dbt seed</code> or <code>dbt snapshot</code></li></ul><ul id="4d741f99-2c27-4746-8927-46894a2b442d" class="bulleted-list"><li style="list-style-type:disc"><code>on-run-end</code>: executed at the <em>end</em> of <code>dbt run</code>, <code>dbt test</code>, <code>dbt seed</code> or <code>dbt snapshot</code></li></ul><p id="627eaf9b-a2ff-450a-85c4-7388cdd232cd" class=""><code>source: </code><code><a href="https://docs.getdbt.com/docs/build/hooks-operations">https://docs.getdbt.com/docs/build/hooks-operations</a></code></p></details></li></ul><ul id="ac1a2b3f-38f4-4d8b-93dc-df893774d97e" class="toggle"><li><details open=""><summary><strong>SQL</strong></summary><ul id="43ddad17-dfc7-4e9c-a1aa-d7e142900e35" class="bulleted-list"><li style="list-style-type:disc">window functions</li></ul><ul id="5f54f69a-10be-4575-adad-06e7b682a533" class="bulleted-list"><li style="list-style-type:disc">CTE’s</li></ul><ul id="e8f51899-32ce-43c8-9256-6d204ad83ddf" class="bulleted-list"><li style="list-style-type:disc">joins</li></ul><ul id="aeb48c25-fb66-4ae9-af52-6ef42bd0d171" class="bulleted-list"><li style="list-style-type:disc">unions</li></ul></details></li></ul><ul id="1d395cc8-e3d3-4722-b918-2801f31da15a" class="toggle"><li><details open=""><summary><strong>job of Analytics Engineer</strong></summary><p id="0ed61710-261f-43f2-ac14-ceee70e84e95" class="">Analytics engineering is the data transformation work that happens between loading data into your warehouse and analyzing it</p><ul id="de2156f7-019e-437b-a5f6-7966eba5925c" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Engineers</strong>: manage core data infrastructure, ensuring data is available and accessible across the organization at the expected time at the expected quality.</li></ul><ul id="a997c509-8513-4b8f-9d07-90d6b75f79e7" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Analysts</strong>: partner with business stakeholders to answer questions with data, build dashboards and reporting, and carry out exploratory analysis.</li></ul><ul id="955149a5-917d-440f-99e4-fa0653a07793" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Scientists</strong>: use e.g. statistics and machine learning to explore and extract value from data: solving optimization problems, building prediction models, running A/B experiments, etc.</li></ul></details></li></ul><ul id="6d1e6843-301b-4a62-95bb-ec3073101846" class="toggle"><li><details open=""><summary><strong>legacy DML SQL commands</strong></summary><ul id="fd87a406-4c16-4bb7-81f1-a6cde3225ba0" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Query Language (DQL) - </strong>The Data Query Language is the sublanguage responsible for reading, or querying, data from a database. In SQL, this corresponds to the <code>SELECT</code></li></ul><ul id="72fac535-ba1c-4ed4-a637-fb54c974e5d8" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Manipulation Language (DML)</strong> - The Data
+	Manipulation Language is the sublanguage responsible for adding, editing or deleting data from a database. In SQL, this corresponds to the <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code></li></ul><ul id="d5d93c0b-1d01-4cd0-badd-2b12aef679be" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Definition Language (DDL)</strong> - The Data
+	Definition Language is the sublanguage responsible for defining the way data is structured in a database. In SQL, this corresponds to manipulating tables through the <code>CREATE TABLE</code>, <code>ALTER TABLE</code>, and <code>DROP TABLE</code></li></ul><ul id="b922eeaa-c280-44df-a40d-03e6ee860135" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Control Language (DCL)</strong> - The Data Control
+	Language is the sublanguage responsible for the administrative tasks of controlling the database itself, most notably granting and revoking database permissions for users. In SQL, this corresponds to the <code>GRANT</code>, <code>REVOKE</code>, and <code>DENY</code> commands, among others.</li></ul></details></li></ul><ul id="ec323c8b-c8aa-478c-8067-a8374df80342" class="toggle"><li><details open=""><summary><strong>dbt CLI commands</strong></summary><table id="085b6bbe-c75a-42c9-93c4-59a6db3f801c" class="simple-table"><tbody><tr id="8a89dae4-32f8-4e52-a9e7-e9fc349cc822"><td id="=TxE" class="">Command</td><td id="[_Wu" class="" style="width:450px">Description</td><td id="fzMj" class="">Version</td></tr><tr id="e5886ca1-1112-4714-b397-5c9dca4a7de4"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/build">build</a></td><td id="[_Wu" class="" style="width:450px">Build and test all selected resources (models, seeds, snapshots, tests)</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="0cd69905-6cd0-4c9c-84ed-bacb1c4cf2f4"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/clean">clean</a></td><td id="[_Wu" class="" style="width:450px">Deletes artifacts present in the dbt project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="6cedcb7c-11f2-4b05-8d8c-25d6524c71a6"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/clone">clone</a></td><td id="[_Wu" class="" style="width:450px">Clone selected models from the specified state</td><td id="fzMj" class="">Requires <a href="https://docs.getdbt.com/docs/dbt-versions/core">dbt v1.6 or higher</a></td></tr><tr id="5d1bd97f-2aa8-4e8b-9cec-6da4d8057e36"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/compile">compile</a></td><td id="[_Wu" class="" style="width:450px">Compiles (but does not run) the models in a project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="3cfc316c-7c5b-4bb7-bc4e-1208719340fb"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/debug">debug</a></td><td id="[_Wu" class="" style="width:450px">Debugs dbt connections and projects</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="12441128-59aa-4419-831a-486f359cff91"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/deps">deps</a></td><td id="[_Wu" class="" style="width:450px">Downloads dependencies for a project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="b193405d-1b8d-43ab-9d25-1811a3c77b3d"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/cmd-docs">docs</a></td><td id="[_Wu" class="" style="width:450px">Generates documentation for a project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="9393618a-171e-4b84-9f20-5c342fbb55ac"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/list">list</a></td><td id="[_Wu" class="" style="width:450px">Lists resources defined in a dbt project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="5a388202-7405-4081-9557-99320bd4245d"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/parse">parse</a></td><td id="[_Wu" class="" style="width:450px">Parses a project and writes detailed timing info</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="a00ffe01-096b-4a0a-9b37-a8cea232db4d"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/retry">retry</a></td><td id="[_Wu" class="" style="width:450px">Retry the last run <code>dbt</code> command from the point of failure</td><td id="fzMj" class="">Requires <a href="https://docs.getdbt.com/docs/dbt-versions/core">dbt v1.6 or higher</a></td></tr><tr id="68879aa7-3ab5-44c7-922f-ff818ac8b10c"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/run">run</a></td><td id="[_Wu" class="" style="width:450px">Runs the models in a project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="c6f7fa2b-b26f-4115-8812-d8aad60c32fc"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/run-operation">run-operation</a></td><td id="[_Wu" class="" style="width:450px">Invoke a macro, including running arbitrary maintenance SQL against  the database</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="b3dba3ba-73f5-4991-a88f-3475b9c95e6d"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/seed">seed</a></td><td id="[_Wu" class="" style="width:450px">Loads CSV files into the database</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="10fa476d-33f0-4022-8077-fa429861821b"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/show">show</a></td><td id="[_Wu" class="" style="width:450px">Preview table rows post-transformation</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="a988c9ca-2a0e-410b-a4ce-25c9f908ef54"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/snapshot">snapshot</a></td><td id="[_Wu" class="" style="width:450px">Executes &quot;snapshot&quot; jobs defined in a project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="6e3c97af-0d2b-4ec3-b01b-1b80d0727c09"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/source">source</a></td><td id="[_Wu" class="" style="width:450px">Provides tools for working with source data (including validating that sources are &quot;fresh&quot;)</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="67315180-23c2-4f1e-bb0b-a7ef74b82fe5"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/test">test</a></td><td id="[_Wu" class="" style="width:450px">Executes tests defined in a project</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr><tr id="bb3c3ee3-f005-4de2-8b63-caeb7c9fa252"><td id="=TxE" class=""><a href="https://docs.getdbt.com/reference/commands/init">init</a></td><td id="[_Wu" class="" style="width:450px">Initializes a new dbt project (CLI only)</td><td id="fzMj" class="">All <a href="https://docs.getdbt.com/docs/dbt-versions/core">supported versions</a></td></tr></tbody></table><p id="22055cb0-1c97-4774-a561-1f0c620f65f8" class="">source: <a href="https://docs.getdbt.com/reference/dbt-commands">https://docs.getdbt.com/reference/dbt-commands</a></p></details></li></ul><ul id="4d478aba-cb44-4a06-b7cc-dd0ac6380fc7" class="toggle"><li><details open=""><summary><strong>Node selection syntax and Graph/set operators</strong></summary><p id="ac28a524-4453-4b8a-80d1-94689e889448" class="">The <code>--select</code> flag accepts one or more arguments. Each argument can be one of:</p><ol type="1" id="feadf370-e4f4-44ef-b613-5da6bef22946" class="numbered-list" start="1"><li>a package name</li></ol><ol type="1" id="5d019545-5657-489f-bd56-15c017b6987c" class="numbered-list" start="2"><li>a model name</li></ol><ol type="1" id="f034eae0-eaed-4786-ad4c-86843d1c2ed2" class="numbered-list" start="3"><li>a fully-qualified path to a directory of models</li></ol><ol type="1" id="1cbe5eb6-8591-4c3b-a47e-7ebeaaf5e6b3" class="numbered-list" start="4"><li>a selection method (<code>path:</code>, <code>tag:</code>, <code>config:</code>, <code>test_type:</code>, <code>test_name:</code>)</li></ol></details></li></ul><ul id="d454b56b-aafb-45e0-8dc4-ce03964f56c8" class="toggle"><li><details open=""><summary><strong>the “description:” YML property</strong></summary></details></li></ul><ul id="ea5a71ac-e189-467e-934d-5c37f18fb4d8" class="toggle"><li><details open=""><summary><strong>the DAG</strong></summary></details></li></ul><ul id="28b96d40-2d2c-4202-b89f-5d2fd0ebceb8" class="toggle"><li><details open=""><summary><strong>Modeling naming conventions</strong></summary></details></li></ul><ul id="0136c2b2-6ad7-40d7-9976-7fe876d44f60" class="toggle"><li><details open=""><summary><strong>Target functionality</strong></summary></details></li></ul><ul id="6ee21b3d-cc01-456e-aad6-181b803e7a41" class="toggle"><li><details open=""><summary><strong>Configurations</strong></summary></details></li></ul><ul id="1308e48c-0a22-49fa-ab98-768630e54837" class="toggle"><li><details open=""><summary><strong>dbt debugging and troubleshooting</strong></summary></details></li></ul><ul id="ae67cd5a-b2f1-4b9b-93da-4ca90949cf5e" class="toggle"><li><details open=""><summary><strong>dbt within a modern data stack</strong></summary></details></li></ul><ul id="91f16e7a-42da-4b28-8cda-3a5d195a0578" class="toggle"><li><details open=""><summary><strong>generic and singular tests</strong></summary></details></li></ul><ul id="04032d9c-71d9-429c-9d6d-3932fd9eaeef" class="toggle"><li><details open=""><summary><strong>database/schema names</strong></summary></details></li></ul><ul id="260e145c-2cec-4c26-8d95-1b700f2f2852" class="toggle"><li><details open=""><summary><strong>Jobs and Environments</strong></summary></details></li></ul><ul id="c3f88943-5aae-413e-a14d-3561f8968755" class="toggle"><li><details open=""><summary><strong>Environment variables</strong></summary></details></li></ul><ul id="7d4f9b50-1c50-4408-a237-342f9fb56970" class="toggle"><li><details open=""><summary><strong>state and deferring</strong></summary></details></li></ul><ul id="c960a676-75fd-4f22-a444-fbce6a0ca01a" class="toggle"><li><details open=""><summary><strong>git commands, workflows and strategies</strong></summary></details></li></ul><ul id="93298a28-d957-4ec0-8ec5-42f930e477ed" class="toggle"><li><details open=""><summary><strong>Row vs. Column-based storage</strong></summary></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Grafiken</summary><div class="indented"><figure id="32dc688d-51fa-4cf0-9dc3-397c43c25dcb" class="image"><a href="img/Untitled.png"><img style="width:1400px" src="Study%20guide%20a60351f4d33948d98de3ddba125b680f/Untitled.png"/></a></figure><figure id="ab887eee-ca38-4354-ae62-67c6a3bdaf0c" class="image"><a href="img/Untitled%201.png"><img style="width:1400px" src="Study%20guide%20a60351f4d33948d98de3ddba125b680f/Untitled%201.png"/></a></figure><figure id="c2b633a4-0dcc-48df-a5b8-d1fcd684975c" class="image"><a href="img/Untitled%202.png"><img style="width:1400px" src="Study%20guide%20a60351f4d33948d98de3ddba125b680f/Untitled%202.png"/></a></figure><p id="dd3de922-d90a-40b1-95e4-52cb7d72a87f" class=""><a href="https://medium.com/validio/dbt-and-the-analytics-engineer-whats-the-hype-about-907eb86c4938">https://medium.com/validio/dbt-and-the-analytics-engineer-whats-the-hype-about-907eb86c4938</a></p><h3 id="802190d4-1bca-4e6a-b565-00a20c72f1fe" class="">Sample Questions</h3><p id="127fc13b-68a9-4ff8-a0bc-59b6696e8420" class="">“<em>does dbt build also test source freshness?</em>” (answer is no)</p><p id="a5177e21-a44f-4dcd-8350-ecfeed8bf7cd" class="">
+	</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Flashcards</summary><div class="indented"><table id="15ad7696-cf4f-4afa-bf2d-8f50c8d03275" class="simple-table"><thead class="simple-table-header"><tr id="6fcd7383-147e-46e0-8436-d61eceaa1caf"><th id="WpMj" class="simple-table-header-color simple-table-header" style="width:402px">QUESTION</th><th id="tX[@" class="simple-table-header-color simple-table-header" style="width:408px">ANSWER</th></tr></thead><tbody><tr id="5d817350-9e44-4aae-899b-e395bec56430"><td id="WpMj" class="" style="width:402px"><code>dbt run -s +model_name+</code> will run which nodes?</td><td id="tX[@" class="" style="width:408px">model_name parents and children (but NOT parents of ALL children )</td></tr><tr id="d6a025aa-d229-4980-9f77-d3d34146bdc2"><td id="WpMj" class="" style="width:402px">you can use this, along with the macro_namespace in your project.yml file to specify the order which dbt will look for packages</td><td id="tX[@" class="" style="width:408px">dispatch 
+	ie. dispatch:  
+	- macro_namespace: dbt_utils search_order: [&#x27;my_project&#x27;, &#x27;dbt_utils&#x27;]</td></tr><tr id="067bff7f-f859-4e46-b64d-9257df36bed3"><td id="WpMj" class="" style="width:402px"><code>dbt docs generate -- no compile</code> produces which artifacts?</td><td id="tX[@" class="" style="width:408px">index.html, catalog.json (notably not the manifest)</td></tr><tr id="1d00aa5d-11ee-4195-87f0-84a54a09bc5f"><td id="WpMj" class="" style="width:402px">what will <code>dbt --warn-error run</code> do ?</td><td id="tX[@" class="" style="width:408px">dbt will run, but will produce all warnings as errors</td></tr><tr id="a8f2c0e9-22cd-4dd1-9cb5-4fb8974418cc"><td id="WpMj" class="" style="width:402px">catalog artifact is produced by which command</td><td id="tX[@" class="" style="width:408px"><code>dbt docs generate</code></td></tr><tr id="f118cb97-c6e5-4aef-9a11-f6ed6d6bd559"><td id="WpMj" class="" style="width:402px"><code>dbt source freshness</code> produces which artifact?</td><td id="tX[@" class="" style="width:408px">sources.json</td></tr><tr id="127e5401-8e35-4290-9f26-3e1a99fbbfc9"><td id="WpMj" class="" style="width:402px">manifest is produced by which commands?</td><td id="tX[@" class="" style="width:408px">produced by <code>build</code>, <code>compile</code>, <code>run</code>, <code>test</code>, <code>docs generate</code>, <code>ls</code></td></tr><tr id="b5f5d1c9-cc96-4e75-a1f2-6e2d321b5c3a"><td id="WpMj" class="" style="width:402px">run results are produced by which commands?</td><td id="tX[@" class="" style="width:408px">produced by <code>build</code>, <code>run</code>, <code>test</code>, <code>seed</code>, <code>snapshot</code>, <code>docs generate</code></td></tr><tr id="11b8e250-fa70-45bf-8568-bde1b0ad5dd3"><td id="WpMj" class="" style="width:402px">Type 1 Slowly changing dimensions</td><td id="tX[@" class="" style="width:408px">In a Type 1 SCD the new data overwrites the existing data. Thus the existing data is lost as it is not stored anywhere else.</td></tr><tr id="30762a92-19d9-4de3-ae24-5bae4a710d3b"><td id="WpMj" class="" style="width:402px">Type 2 Slowly changing dimensions</td><td id="tX[@" class="" style="width:408px">A Type 2 SCD retains the full history of values, by adding a new row. It adds a timestamp column too to determine which record is more recent</td></tr><tr id="44b55ada-6c11-4b7f-81be-9b086c51e0fa"><td id="WpMj" class="" style="width:402px">statelessness</td><td id="tX[@" class="" style="width:408px">it doesn&#x27;t matter how many times a model has been run before, or if it has ever been run before ( dbt doesn&#x27;t &#x27;know&#x27; anything about pasts runs )</td></tr><tr id="67470d4a-d077-49e8-9018-f8a7d753fbf8"><td id="WpMj" class="" style="width:402px">idempotency</td><td id="tX[@" class="" style="width:408px">It doesn&#x27;t matter if you run it once or a thousand times ( thinking multiply by 1 )</td></tr><tr id="62aeee2f-26db-4a50-99b7-b3620952e075"><td id="WpMj" class="" style="width:402px">which two features are necessary to enable &#x27;slim CI&#x27;</td><td id="tX[@" class="" style="width:408px">defer , and state allows dbt identify resources that are new or modified, and/ or defer to upstream references (that may not exist in your current environment ) to the environment provided by the state manifest.</td></tr><tr id="19638121-338c-49d5-a012-fde3266d2c88"><td id="WpMj" class="" style="width:402px">generic test</td><td id="tX[@" class="" style="width:408px">a parametrized query that accepts arguments. The test query is defined in a special test block (like a macro)</td></tr><tr id="8dd6de41-5538-4002-8551-2af14aa32f9c"><td id="WpMj" class="" style="width:402px">singular test</td><td id="tX[@" class="" style="width:408px">a SQL query that returns failing rows, query in a .sql file within your test directory.</td></tr><tr id="5703e990-7659-453c-83f6-3772c6a45193"><td id="WpMj" class="" style="width:402px">modularity</td><td id="tX[@" class="" style="width:408px">the degree to which a system&#x27;s components may be separated and recombined</td></tr><tr id="46a965b3-be12-4e5e-a535-a7820f7eb4c3"><td id="WpMj" class="" style="width:402px">what file type is used for building a model?</td><td id="tX[@" class="" style="width:408px">.sql</td></tr><tr id="8e6c58de-1129-4171-9b21-83f440357b49"><td id="WpMj" class="" style="width:402px">D A G</td><td id="tX[@" class="" style="width:408px">directed acyclic graph</td></tr><tr id="88f3a673-b401-4b5a-a396-43fa4e4c69b7"><td id="WpMj" class="" style="width:402px">normalized</td><td id="tX[@" class="" style="width:408px">these modeling techniques were designed to reduce storage and compute costs. minimizing the number repeats in the DB</td></tr><tr id="a7aff2c7-f36c-4b18-8a76-ef016ac1c01d"><td id="WpMj" class="" style="width:402px">view</td><td id="tX[@" class="" style="width:408px">What is the default materialization of a model if you don&#x27;t proactively configure the materialization for a model?</td></tr><tr id="4c0614bb-5dea-457a-9fc9-2e97bfba2dbc"><td id="WpMj" class="" style="width:402px">A given model called `events` is configured to be materialized as a view in dbt_project.yml and configured as a table in a config block at the top of the model. When you execute <code>dbt run</code>, what will happen in dbt?</td><td id="tX[@" class="" style="width:408px">dbt will build the events model as a table, individual config blocks trump the default settings</td></tr><tr id="41686d95-6578-4070-ba41-296ef9a35c2a"><td id="WpMj" class="" style="width:402px">to build dependancies between models use this dbt function</td><td id="tX[@" class="" style="width:408px">ref function ( in the from clause of the sql or in the join!)</td></tr><tr id="4900d1b3-3908-493f-aedb-3755d10ee32b"><td id="WpMj" class="" style="width:402px">Which command below will attempt to only materialize dim_customers and its downstream models?</td><td id="tX[@" class="" style="width:408px"><code>dbt run --select dim_customers+</code>, or 
+	<code>dbt run -s dim_customers+</code></td></tr><tr id="85b02697-ee23-4fcd-ac4b-745792b8b078"><td id="WpMj" class="" style="width:402px">staging models are best used to</td><td id="tX[@" class="" style="width:408px">alias, reorder, or filter data; generally not to join or aggregate data</td></tr><tr id="58fb9ed2-1f0c-4f1c-b51e-9fc0c77633af"><td id="WpMj" class="" style="width:402px">T|F subdirectories allow you to configure materializations at the folder level</td><td id="tX[@" class="" style="width:408px">true</td></tr><tr id="c71d89ff-6d3b-4e8e-819b-067d47fa5a51"><td id="WpMj" class="" style="width:402px">T|F subdirectories change the schema where a model is built, based on the name of the folder the model is located in</td><td id="tX[@" class="" style="width:408px">false</td></tr><tr id="cfd5bdbb-748d-4cdf-9c0f-d1c3bf3f9768"><td id="WpMj" class="" style="width:402px">Used to build dependancy of one model to a single raw table</td><td id="tX[@" class="" style="width:408px">source function</td></tr><tr id="00e85ec4-e4df-4cc0-a8ab-f28f44bc2b6c"><td id="WpMj" class="" style="width:402px">By default, where in your dbt project will dbt look for source configurations?</td><td id="tX[@" class="" style="width:408px">.yml file in the models path ( defaulted as the models folder)</td></tr><tr id="b68a1a53-3b96-48d4-9974-2d371e84e17f"><td id="WpMj" class="" style="width:402px">dbt ships with which 4 generic tests</td><td id="tX[@" class="" style="width:408px">not null, unique, accepted values, relationships</td></tr><tr id="663ef923-10d8-4cc7-98d5-3502ea043dcb"><td id="WpMj" class="" style="width:402px">genereic tests</td><td id="tX[@" class="" style="width:408px">Generic tests are configured in YAML and return the number of records that do not meet your assertions. These are run on specific columns in a model</td></tr><tr id="fb7bc55a-7a2b-4136-829b-5fa1e7712f06"><td id="WpMj" class="" style="width:402px">Singular tests</td><td id="tX[@" class="" style="width:408px">Singular tests are specific queries that you run against your models. These are run on the entire model.</td></tr><tr id="e5464e80-17b0-4cdb-b9ef-ffff31feb364"><td id="WpMj" class="" style="width:402px">T|F tests are compiled as sql files</td><td id="tX[@" class="" style="width:408px">true</td></tr><tr id="85d41242-1fa6-4709-b7f7-1a7706d981f7"><td id="WpMj" class="" style="width:402px">In what folder should singular tests be saved in your dbt project?</td><td id="tX[@" class="" style="width:408px">tests folder, whereas generic tests are stored in your macros folder or in tests/generic</td></tr><tr id="4f0fdb1b-12e9-46a1-8124-27de298a89c5"><td id="WpMj" class="" style="width:402px">What command would you use to only run tests configured on a source named my_raw_data?</td><td id="tX[@" class="" style="width:408px"><code>dbt test --select sources: my_raw_data</code></td></tr><tr id="29e81671-0c48-4d68-aeff-bb8b664fc1de"><td id="WpMj" class="" style="width:402px">which dbt command will run modelname, all parents, all children, AND all parents of all children</td><td id="tX[@" class="" style="width:408px"><code>dbt run --models @modelname</code></td></tr><tr id="2169f71b-9e6c-405f-844d-af1aaa9870c9"><td id="WpMj" class="" style="width:402px">which materialization in your config block is most like a CTE</td><td id="tX[@" class="" style="width:408px"><code>materalized=&#x27;ephemeral&#x27;</code></td></tr><tr id="7fd1f548-7d16-4c83-8324-efbd54667d06"><td id="WpMj" class="" style="width:402px">T|F doc blocks must be stored as .yml files</td><td id="tX[@" class="" style="width:408px">F ( they must be stored as .md )</td></tr><tr id="e90ce10b-be5a-4578-9ebf-4b207d4a9ea0"><td id="WpMj" class="" style="width:402px">T|F hooks, like configuration settings are hierarchical, and dbt runs the hooks in your config block in lieu of those in your dbt_project.yml file</td><td id="tX[@" class="" style="width:408px">F hooks are cumulative, all hooks defined for your model will be run</td></tr><tr id="fad5c2d3-13ed-4443-9251-08184b975924"><td id="WpMj" class="" style="width:402px">T|F dbt doesn&#x27;t automatically pull descriptions from your dbt project and metadata about your models and sources into the documentation site. you must set up a macro to do this for you.</td><td id="tX[@" class="" style="width:408px">false</td></tr><tr id="83956080-1f5f-4469-99c2-0c8ab838f1a6"><td id="WpMj" class="" style="width:402px">What is the correct way to reference the doc block called &#x27;orders&#x27;, contained in a file called docs_jaffle_shop.md?</td><td id="tX[@" class="" style="width:408px">description: &#x27;<code>{{ doc(&quot;orders&quot;) }}</code>&#x27; - notice here the quotes</td></tr><tr id="982e921e-e302-4e0a-b7c5-e1d18e3082f9"><td id="WpMj" class="" style="width:402px">which command will generate documentation in development?</td><td id="tX[@" class="" style="width:408px"><code>dbt docs generate</code></td></tr><tr id="d56e24b0-d95f-4639-b7a6-935eb8417e64"><td id="WpMj" class="" style="width:402px">The following commands are configured for a production job in dbt Cloud. 
+	<code>dbt seed 
+	dbt test --select source:* 
+	dbt run 
+	dbt test --exclude source:* 
+	</code>If any of the tests on sources fails, how will dbt Cloud handle the rest of the commands?</td><td id="tX[@" class="" style="width:408px">dbt will not run any further commands</td></tr><tr id="aba43a6a-a046-424b-914a-ed4224ee5ae3"><td id="WpMj" class="" style="width:402px">What is true of schemas when running your dbt project in production?</td><td id="tX[@" class="" style="width:408px">Running dbt in production should use a different database schema than I used in development</td></tr><tr id="4e5958e4-10e6-49b3-b961-854218969195"><td id="WpMj" class="" style="width:402px">Consider a production job where you have the following commands and have enabled docs generation. 
+	<code>dbt run 
+	dbt test 
+	</code>What will be the correct order of invoked dbt commands in the run history after &#x27;<code>clone git repository</code>&#x27; and &#x27;create profile from connection&#x27;?</td><td id="tX[@" class="" style="width:408px"><code>dbt deps
+	dbt run 
+	dbt test
+	dbt docs generate</code></td></tr><tr id="c0c74465-8a5f-4fa0-8d23-a0017aac02fe"><td id="WpMj" class="" style="width:402px">where to dbt packages land?</td><td id="tX[@" class="" style="width:408px">Packages get installed in the dbt_packages directory by default, this is configurable however in packages-install-path</td></tr><tr id="e96b199f-d32c-475c-a9d8-0b00f34e675e"><td id="WpMj" class="" style="width:402px">T|F profiles.yml files are database specific</td><td id="tX[@" class="" style="width:408px">F</td></tr><tr id="efd8d0e9-4933-4f86-b7f1-ec2c4e785632"><td id="WpMj" class="" style="width:402px">properties exist only in which kind of file?</td><td id="tX[@" class="" style="width:408px">yaml</td></tr><tr id="745eff10-e180-453b-9b4a-94d960caaeca"><td id="WpMj" class="" style="width:402px">Consider a DAG with 6 nodes. On run ,node D which has four downstream models fails. after fixing the error, which command would you run to build all unbuilt models in the DAG?</td><td id="tX[@" class="" style="width:408px"><code>dbt run --select model_d+</code></td></tr><tr id="48d5cf64-b90d-406a-a22b-ae1bea186128"><td id="WpMj" class="" style="width:402px">identifiers are to raw data ( not built by dbt ) what alias are to</td><td id="tX[@" class="" style="width:408px">dbt builds (models etc)</td></tr><tr id="5f14f6a4-babd-4197-98e7-72020bd74255"><td id="WpMj" class="" style="width:402px">analysis-paths:</td><td id="tX[@" class="" style="width:408px">Specifies a list of directories where analyses are located. If you do not specify this dbt will not compile any files as analyses</td></tr><tr id="36dc4299-b088-40e2-9630-ad0a716d7a3a"><td id="WpMj" class="" style="width:402px">consider this jinja : <code>{% for task in tasks %}</code> .... <code>{% endfor %}</code>  
+	What jinja would need to be added before this loop?</td><td id="tX[@" class="" style="width:408px">the array of tasks wasn&#x27;t defined. we need to add a line where we set the tasks ie.<code>{% set tasks = [&#x27; clean kitchen&#x27;, &#x27;fold laundry&#x27; ] %}</code></td></tr><tr id="bb6703c0-857b-48fa-9781-c5a2f15efaba"><td id="WpMj" class="" style="width:402px"><code>build</code></td><td id="tX[@" class="" style="width:408px">build and test all selected resources (models, seeds, snapshots, tests)</td></tr><tr id="b1c239e5-2260-43cd-8bac-42993eaca0e8"><td id="WpMj" class="" style="width:402px"><code>clean</code></td><td id="tX[@" class="" style="width:408px">this will remove the /dbt_modules (populated when you run deps) and /target folder (populated when models are run)</td></tr><tr id="70d0eae4-47e6-4077-8201-81fda4464a32"><td id="WpMj" class="" style="width:402px"><code>compile</code></td><td id="tX[@" class="" style="width:408px">compiles (but does not run) the models in a project</td></tr><tr id="6155309a-658b-4146-bb60-368b8c25151f"><td id="WpMj" class="" style="width:402px"><code>debug</code> (CLI only)</td><td id="tX[@" class="" style="width:408px">debugs dbt connections and projects</td></tr><tr id="d346ef27-3493-4591-97b5-d59925df09a1"><td id="WpMj" class="" style="width:402px"><code>dbt deps</code></td><td id="tX[@" class="" style="width:408px">downloads dependencies for a project</td></tr><tr id="86c94ee8-48b3-43b5-8da8-933f4ecf6979"><td id="WpMj" class="" style="width:402px"><code>dbt docs generate</code></td><td id="tX[@" class="" style="width:408px">generates documentation for a project</td></tr><tr id="2d043eca-39d7-4d22-8808-1ae45c619f36"><td id="WpMj" class="" style="width:402px"><code>init</code> (CLI only)</td><td id="tX[@" class="" style="width:408px">initializes a new dbt project</td></tr><tr id="df2f3b23-d19f-4cc9-9373-c9e093e227e0"><td id="WpMj" class="" style="width:402px"><code>list</code> (CLI only)</td><td id="tX[@" class="" style="width:408px">lists resources defined in a dbt project</td></tr><tr id="df948f66-8f48-46a5-92ef-cb18574e1c0c"><td id="WpMj" class="" style="width:402px"><code>parse</code> (CLI only)</td><td id="tX[@" class="" style="width:408px">parses a project and writes detailed timing info</td></tr><tr id="a87e69a1-8568-4754-b7c7-047f92f1912f"><td id="WpMj" class="" style="width:402px"><code>run</code></td><td id="tX[@" class="" style="width:408px">runs the models in a project</td></tr><tr id="8c32f7fb-23f0-460c-bccd-4e3ab9a80381"><td id="WpMj" class="" style="width:402px"><code>seed</code></td><td id="tX[@" class="" style="width:408px">loads CSV files into the database</td></tr><tr id="cf9c5149-2f70-45b1-bbea-4aa591f8bcfc"><td id="WpMj" class="" style="width:402px"><code>snapshot</code></td><td id="tX[@" class="" style="width:408px">executes &quot;snapshot&quot; jobs defined in a project</td></tr><tr id="55c7d676-be69-4321-8efd-7bf88de05d3e"><td id="WpMj" class="" style="width:402px"><code>source</code></td><td id="tX[@" class="" style="width:408px">provides tools for working with source data (including validating that sources are &quot;fresh&quot;)</td></tr><tr id="e89d767b-f71b-443c-8db5-5ae8b2834854"><td id="WpMj" class="" style="width:402px"><code>test</code></td><td id="tX[@" class="" style="width:408px">executes tests defined in a project</td></tr><tr id="c7b7fcd9-9b03-4a0b-b404-805798a5be3f"><td id="WpMj" class="" style="width:402px">rpc (CLI only)</td><td id="tX[@" class="" style="width:408px">runs an RPC server that clients can submit queries to</td></tr><tr id="0e377e13-b259-428a-88c7-3a3039d95b06"><td id="WpMj" class="" style="width:402px">epehemeral</td><td id="tX[@" class="" style="width:408px">ephemeral models do not exist in the data base, they are reusable code snippets much like CTEs</td></tr><tr id="91f1195d-a8f6-485f-b578-978e268175ba"><td id="WpMj" class="" style="width:402px">view</td><td id="tX[@" class="" style="width:408px">the sql statement is stored in your DB</td></tr><tr id="10b4e27a-e4f8-4096-bb2b-8168a6fb914e"><td id="WpMj" class="" style="width:402px">table</td><td id="tX[@" class="" style="width:408px">rebuild or build the table is stored in your DB</td></tr><tr id="cea69ac9-3786-4459-88b5-1129a8cd4d63"><td id="WpMj" class="" style="width:402px">incremental materialization</td><td id="tX[@" class="" style="width:408px">look at an underlying table or view and add new records ( over top of old records ). These can be configured to overwrite using a unique key or to append if there is no unique key</td></tr><tr id="167955d9-dbbf-4a91-bded-a9c188c4f1a7"><td id="WpMj" class="" style="width:402px">snapshots</td><td id="tX[@" class="" style="width:408px">snapshots look at underlying data, looking for any records that have changed and add them as a new row</td></tr><tr id="6549e3ca-771e-40f8-bcad-8e7b1b11918d"><td id="WpMj" class="" style="width:402px"><code>dbt run --fail-fast</code> or 
+	<code>dbt run -x</code></td><td id="tX[@" class="" style="width:408px">make dbt exit immediately if a single model fails to build. If other models are in-progress when the first model fails, then dbt will terminate the connections for these still-running models.</td></tr><tr id="f6b57865-2666-4761-a83a-4005ca93a566"><td id="WpMj" class="" style="width:402px">T|F When working in dbt, target schema should always be unique for each dbt developer working in development?</td><td id="tX[@" class="" style="width:408px">true</td></tr><tr id="93ec5e41-1283-43cc-b5ab-74149bcc7446"><td id="WpMj" class="" style="width:402px">What is required to materialize a model in your data platform with dbt?</td><td id="tX[@" class="" style="width:408px">dbt project with .sql files saved in a models directory , and a connection to a data warehouse with raw data.</td></tr><tr id="50484425-3cf2-44a0-bbe7-e9290030c940"><td id="WpMj" class="" style="width:402px">T|F for a dbt project data is stored in the data platform and code is stored in the git repository</td><td id="tX[@" class="" style="width:408px">true</td></tr><tr id="5ce4d2d5-708c-4215-81aa-4d2c949ca1d8"><td id="WpMj" class="" style="width:402px">where does dbt look for source configs?</td><td id="tX[@" class="" style="width:408px">in a .yml file, in the models file path</td></tr><tr id="c0b57cff-a040-4ded-9dfa-7476801fe3d2"><td id="WpMj" class="" style="width:402px">How do you associate a singular test with a particular dbt model or source?</td><td id="tX[@" class="" style="width:408px">Using the ref or source macro in the SQL query in the singular test file</td></tr><tr id="29cbd87d-a511-4c01-8ac5-b9fd49f76990"><td id="WpMj" class="" style="width:402px">T|F you can make a doc block in a .sql file and reference it in a description</td><td id="tX[@" class="" style="width:408px">false you need to make doc blocks in markdown files, then you can reference them in a description</td></tr><tr id="f8ca4771-a0b3-43c5-a3bc-f8dd5873db25"><td id="WpMj" class="" style="width:402px">T|F the doc function can be used to reference a doc macro to be used in a description</td><td id="tX[@" class="" style="width:408px">true</td></tr><tr id="8d12c9ea-8638-4086-a866-a6edff61b177"><td id="WpMj" class="" style="width:402px">what will <code>dbt run --select 3+my_model+4</code> do?</td><td id="tX[@" class="" style="width:408px">select my_model, its parents up to the 3rd degree, and its children down to the 4th degree</td></tr><tr id="59ac95a0-3bf5-4749-a62b-54ff8a9565d0"><td id="WpMj" class="" style="width:402px">pre-hook</td><td id="tX[@" class="" style="width:408px">executed before a model, seed or snapshot is built.</td></tr><tr id="6037fc5c-28f7-42ed-9fed-5d15d876f4d3"><td id="WpMj" class="" style="width:402px">post-hook</td><td id="tX[@" class="" style="width:408px">executed after a model, seed or snapshot is built</td></tr><tr id="19ab7423-5370-4c92-a016-b23b6b2cf535"><td id="WpMj" class="" style="width:402px">on-run-start</td><td id="tX[@" class="" style="width:408px">executed at the start of <code>dbt run</code>, <code>dbt seed</code> or <code>dbt snapshot</code></td></tr><tr id="21e32a29-d062-4e5f-8a9c-013968676120"><td id="WpMj" class="" style="width:402px">on-run-end</td><td id="tX[@" class="" style="width:408px">executed at the end of <code>dbt run</code>, <code>dbt seed</code> or <code>dbt snapshot</code></td></tr><tr id="fd090f97-7675-45a0-b22e-ab1d7365fdcd"><td id="WpMj" class="" style="width:402px">T|F Operations are a separate resource in a dbt project.</td><td id="tX[@" class="" style="width:408px">False. Operations are macros that you can run using the run-operation command command.</td></tr><tr id="9f67af6b-d91d-40d4-a0bd-8913825a8d71"><td id="WpMj" class="" style="width:402px">What are the required properties in defining an exposure?</td><td id="tX[@" class="" style="width:408px">Name, Type &amp; Owner (email)</td></tr><tr id="ca989f22-ccb6-410a-99fe-b629eb896774"><td id="WpMj" class="" style="width:402px">What are the different values of &#x27;type&#x27; property of an exposure?</td><td id="tX[@" class="" style="width:408px">dashboard, notebook, analysis, ml, application</td></tr><tr id="2ed6544b-a77d-45c0-965d-1b9a32124f1a"><td id="WpMj" class="" style="width:402px">T|F Exposures appear as orange-y nodes in the DAG</td><td id="tX[@" class="" style="width:408px">True.</td></tr><tr id="ea199dce-b9b0-4c58-93ae-1cffec5835bd"><td id="WpMj" class="" style="width:402px">What will command <code>dbt run -s +exposure:weekly_jaffle_metrics</code> execute?</td><td id="tX[@" class="" style="width:408px">This will execute all models upstream of the exposure.</td></tr><tr id="660c3f37-5c61-45fe-848c-46ea35defe9c"><td id="WpMj" class="" style="width:402px">On the first run of the <code>dbt snapshot</code> command, what is the value of dbt_valid_to for all records?</td><td id="tX[@" class="" style="width:408px">Null</td></tr><tr id="6744c1fa-7630-4b9b-8bdc-6895b8a27554"><td id="WpMj" class="" style="width:402px">What are the different strategies used in creating a snapshot?</td><td id="tX[@" class="" style="width:408px">Timestamp &amp; Check</td></tr><tr id="3163e85c-ac96-492a-aa45-554ae3ef3990"><td id="WpMj" class="" style="width:402px">What is the required config when a &#x27;check&#x27; strategy is used in creating a snapshot?</td><td id="tX[@" class="" style="width:408px">check_cols</td></tr><tr id="cf35c47b-432e-4a2c-b852-ca1eacd2474d"><td id="WpMj" class="" style="width:402px">When should a check strategy be used when creating a snapshot?</td><td id="tX[@" class="" style="width:408px">The check strategy is useful for tables which do not have a reliable updated_at column.</td></tr><tr id="660852f9-08ec-4139-88e2-ca04ee41ba08"><td id="WpMj" class="" style="width:402px">What is the required config when a &#x27;timestamp&#x27; strategy is used in creating a snapshot?</td><td id="tX[@" class="" style="width:408px">updated_at</td></tr><tr id="c9e109aa-8815-4ee7-b8d4-800f8c9223e8"><td id="WpMj" class="" style="width:402px">What are the different snapshot meta fields?</td><td id="tX[@" class="" style="width:408px"><code>dbt_valid_from</code>, <code>dbt_valid_to</code>, <code>dbt_scd_id</code>, <code>dbt_updated_at</code></td></tr><tr id="aee47f42-5a84-4c66-977f-6ff3116df4e7"><td id="WpMj" class="" style="width:402px">What happens when the &#x27;invalidate_hard_deletes&#x27; config is set to &#x27;true&#x27; while defining a snapshot?</td><td id="tX[@" class="" style="width:408px">Finds hard deleted records in source, and set dbt_valid_to current time if no longer exists</td></tr><tr id="ef9c5cb3-f343-44a9-adb9-f29356d2435f"><td id="WpMj" class="" style="width:402px">T|F Seeds can be configured in the .csv file</td><td id="tX[@" class="" style="width:408px">False. Seeds are configured in your dbt_project.yml</td></tr><tr id="5a14328b-1c84-4488-9e3c-154ddd846eaa"><td id="WpMj" class="" style="width:402px">T|F Sources are declared in the dbt_project.yml file.</td><td id="tX[@" class="" style="width:408px">False. Sources are defined in .yml files nested under a sources: key.</td></tr><tr id="4c71b05f-6437-4617-8d6e-5b42a4dd30aa"><td id="WpMj" class="" style="width:402px">How can the landing page of the generated documentation website be customized?</td><td id="tX[@" class="" style="width:408px">By supplying your own docs block called __overview__. i.e. <code>{{ % docs _overview_ % }} ....... {{ % enddocs % }}</code></td></tr><tr id="fa5220c5-8470-43dd-a50f-95cc48a4a400"><td id="WpMj" class="" style="width:402px">What happens when command <code>dbt test --store-failures</code> is invoked?</td><td id="tX[@" class="" style="width:408px">This will store failures, the location of which can be configured in the dbt_project.yml file.</td></tr><tr id="dd8a12ff-309c-4977-8d90-f91433e1ce63"><td id="WpMj" class="" style="width:402px">What is the name of the default schema to store the results of a test failure?</td><td id="tX[@" class="" style="width:408px"><code>dbt_test__audit</code></td></tr><tr id="ca1eb523-7302-4d25-94f4-8e9f7c293db7"><td id="WpMj" class="" style="width:402px">The <code>is_incremental()</code> macro will return True if:</td><td id="tX[@" class="" style="width:408px">- the destination table already exists in the database 
+	- dbt is not running in full-refresh mode 
+	- the running model is configured with <code>materialized=&#x27;incremental&#x27;</code></td></tr><tr id="f583d12d-0bae-4462-9f5a-b76b7588113a"><td id="WpMj" class="" style="width:402px">T|F If a new column is added to an existing incremental model and <code>dbt run</code> is executed, the column gets added to the target table.</td><td id="tX[@" class="" style="width:408px">False. If you add a column to your incremental model, and execute a <code>dbt run</code>, this column will not appear in your target table.</td></tr><tr id="22ac19c2-affd-4fd4-93d6-07db110d813a"><td id="WpMj" class="" style="width:402px"><code>{{ config( materialized=&#x27;incremental&#x27;, unique_key=&#x27;date_day&#x27;, on_schema_change=&#x27;fail&#x27; )}}  </code>Based on the above config, what happens when a new column is added to the incremental model?</td><td id="tX[@" class="" style="width:408px">Triggers an error message when the source and target schemas diverge</td></tr><tr id="6fb063e3-10ce-40a1-90b5-f553da9de0c4"><td id="WpMj" class="" style="width:402px"><code>{{ config( materialized=&#x27;incremental&#x27;, unique_key=&#x27;date_day&#x27;, on_schema_change=&#x27;append_new_columns&#x27; )}}</code>  Based on the above config, what happens when a new column is added to the incremental model?</td><td id="tX[@" class="" style="width:408px">Append new columns to the existing table. Note that this setting does not remove columns from the existing table that are not present in the new data.</td></tr><tr id="38af3423-a64f-4176-9254-f9dbbb67e0e3"><td id="WpMj" class="" style="width:402px"><code>{{ config( materialized=&#x27;incremental&#x27;, unique_key=&#x27;date_day&#x27;, on_schema_change=&#x27;sync_all_columns&#x27; )}} </code> Based on the above config, what happens when an existing column is removed from the incremental model?</td><td id="tX[@" class="" style="width:408px">Adds any new columns to the existing table, and removes any columns that are now missing.</td></tr><tr id="aefc2f01-4179-4ac9-8830-b76a2c367e4a"><td id="WpMj" class="" style="width:402px">In a model, &#x27;fct_orders.sql&#x27; the following config is defined, <code>{{ config(schema = &#x27;marketing&#x27;) }}</code>, the target schema defined in the profiles.yml file is dbt_jdoe. Now under which schema the model will get built?</td><td id="tX[@" class="" style="width:408px">dbt will generate the schema name for the model by concatenating the custom schema to the target schema, as in: &lt;target_schema&gt;_&lt;custom_schema&gt;; i.e. dbt_jdoe_marketing</td></tr><tr id="7cc26e83-2c22-4c5e-a61b-9694a49ae226"><td id="WpMj" class="" style="width:402px">In a model, &#x27;fct_orders.sql&#x27; the following config is defined, <code>{{ config(database = &quot;jaffle_shop&quot;) }}</code>, the target database defined in the profiles.yml file is dbt_analytics. Now under which database the model will get built?</td><td id="tX[@" class="" style="width:408px">This config changes this model to be built into a database called jaffle_shop</td></tr><tr id="8bda70de-0264-49b5-8bd7-ae07713cd07a"><td id="WpMj" class="" style="width:402px">Where can the variables be defined?</td><td id="tX[@" class="" style="width:408px">- in the dbt_project.yml file 
+	- on the command line</td></tr><tr id="7d297d2c-f396-4f38-bc33-c7b068725458"><td id="WpMj" class="" style="width:402px">To define (or override) variables for a run of dbt, what option is used?</td><td id="tX[@" class="" style="width:408px">use the <code>--vars</code> command line option</td></tr><tr id="6d0eb9af-3df3-4b63-bfb6-ad204073abe7"><td id="WpMj" class="" style="width:402px">While installing git packages, the value of the revision parameter can be?</td><td id="tX[@" class="" style="width:408px">- a branch name - a tagged release - a specific commit (full 40-character hash)</td></tr><tr id="2f729e2f-30a3-4c6d-be2b-72736353db65"><td id="WpMj" class="" style="width:402px">What happens when an unpinned Git package is specified in the dbt project?</td><td id="tX[@" class="" style="width:408px">You will receive the following warning message,  The git package &quot;https://github.com/dbt-labs/dbt-utils.git&quot; is not pinned.This can introduce breaking changes into your project without warning!</td></tr><tr id="ef7f4c38-4c3c-4215-9b66-6b549acf1a57"><td id="WpMj" class="" style="width:402px">T|F Removing a package from packages.yml will uninstall the package.</td><td id="tX[@" class="" style="width:408px">False. it still exists in your dbt_packages/ directory. If you want to completely uninstall a package, you should either: delete the package directory in dbt_packages/; or run <code>dbt clean</code> to delete all packages (and any compiled models), followed by <code>dbt deps</code>.</td></tr><tr id="2cbe6803-18c5-4422-9568-945a3c1d36b6"><td id="WpMj" class="" style="width:402px">T|F Analyses will be materialized as a model in the database.</td><td id="tX[@" class="" style="width:408px">False. Analyses are not models, hence they will not be materialized.</td></tr><tr id="dc5066ad-d272-4096-9619-ccf64a8012e2"><td id="WpMj" class="" style="width:402px">How do you generate but not execute the formatted SQL for a given dbt model?</td><td id="tX[@" class="" style="width:408px">Run <code>dbt compile</code>.</td></tr><tr id="aa7ba8df-b589-4ef5-aa70-83b79675a8e3"><td id="WpMj" class="" style="width:402px">Metric</td><td id="tX[@" class="" style="width:408px">A metric is a timeseries aggregation over a table that supports zero or more dimensions.</td></tr><tr id="47014658-a436-48e8-bcd2-13e9020da42c"><td id="WpMj" class="" style="width:402px">In what color, metrics appear in a DAG?</td><td id="tX[@" class="" style="width:408px">Pink</td></tr><tr id="2171c1f3-ee36-414a-9f4b-8ecefe3d6643"><td id="WpMj" class="" style="width:402px">What are the required properties for defining a metric?</td><td id="tX[@" class="" style="width:408px">Name,  Model (not required for expression metrics),  Type,  Sql,  Timestamp,  time_grains</td></tr><tr id="fbce902a-996d-4af5-80bb-b4ce503e0ecf"><td id="WpMj" class="" style="width:402px">Expression metrics</td><td id="tX[@" class="" style="width:408px">This metric type is defined as any non-aggregating calculation of 1 or more metrics</td></tr><tr id="5e91a51a-c74f-4db6-884f-7d5988bc437c"><td id="WpMj" class="" style="width:402px">What kind of metrics can be created using expression metrics?</td><td id="tX[@" class="" style="width:408px">- ratios - subtractions - any arbitrary calculation</td></tr><tr id="9c4f7d8d-d85e-4bc2-944f-616c6eeed419"><td id="WpMj" class="" style="width:402px">If a filter is defined in a metric, what are the required properties?</td><td id="tX[@" class="" style="width:408px">Field, Operator, Value</td></tr><tr id="e8ad1c07-ee65-40ac-97cc-3a1661a043b9"><td id="WpMj" class="" style="width:402px">T|F Running total is an available type of metric in dbt?</td><td id="tX[@" class="" style="width:408px">False. Available types are 
+	- count, 
+	- count_distinct, 
+	- sum,  
+	- average, 
+	- min, 
+	- max 
+	expression</td></tr><tr id="0c3065a6-27ae-476c-87a0-3836ce2ff567"><td id="WpMj" class="" style="width:402px">T|F Multiple arguments can be provided to <code>--select</code> flag?  Example: <code>dbt run --select my_first_model my_second_model</code></td><td id="tX[@" class="" style="width:408px">True. The <code>--select</code> flag accepts one or more arguments. Each argument can be one of: 
+	- a package name 
+	- a model name 
+	- a fully-qualified path to a directory of models 
+	- a selection method (path:, tag:, config:, test_type:, test_name:)</td></tr><tr id="0f7fa2d5-f682-44c5-9407-9104bcba4f44"><td id="WpMj" class="" style="width:402px">what does <code>dbt build -s model_a model_b</code> run?</td><td id="tX[@" class="" style="width:408px">Runs model_a, model_b, tests of model_a, tests of model_b</td></tr><tr id="b14a72c4-59e6-4c30-8702-b524b2b743a5"><td id="WpMj" class="" style="width:402px">T|F You can use <code>--defer</code> argument in dbt snapshot command?</td><td id="tX[@" class="" style="width:408px">False. <code>--select</code>, <code>--exclude</code>, <code>--selector</code> are the only arguments used with <code>dbt snapshot</code> command.</td></tr><tr id="9d40396c-c3ea-4706-a3d5-15cbc2d2d894"><td id="WpMj" class="" style="width:402px">What is the command to select &#x27;my_model&#x27; , its parents up to the 3rd degree, and its children down to the 4th degree?</td><td id="tX[@" class="" style="width:408px"><code>dbt run --select 3+my_model+4</code></td></tr><tr id="d3ac6dce-8996-4786-866c-b293b4eab42d"><td id="WpMj" class="" style="width:402px">What are the different graph operators?</td><td id="tX[@" class="" style="width:408px">+, n+n, @, *</td></tr><tr id="4a0d498a-a302-44b5-8390-904a3d1321cf"><td id="WpMj" class="" style="width:402px">Write the command to select &#x27;my_model, it&#x27;s children and the parents of it&#x27;s children?</td><td id="tX[@" class="" style="width:408px"><code>dbt run -s @my_model</code></td></tr><tr id="d6710c9b-44fb-4bed-9425-b9fbaa075edb"><td id="WpMj" class="" style="width:402px">Write the command to select all the models from staging/harvest directory?</td><td id="tX[@" class="" style="width:408px"><code>dbt run -s staging.harvest.*</code> or  <code>dbt run -s models/staging/harvest</code> or <code>dbt run -s path:models/staging/harvest</code></td></tr><tr id="88f39a82-a96e-4589-8ca2-6d81bc3397d1"><td id="WpMj" class="" style="width:402px">What are the different types of set operators?</td><td id="tX[@" class="" style="width:408px">Union, Intersection</td></tr><tr id="ef3d08e3-ab39-46ae-8fe8-4ece16541a74"><td id="WpMj" class="" style="width:402px">Write the command to run models that are in the marts/finance subdirectory and tagged nightly.</td><td id="tX[@" class="" style="width:408px"><code>dbt run -s marts.finance, tag:nightly</code></td></tr><tr id="10a167f5-75fc-477a-8856-a38d0649f928"><td id="WpMj" class="" style="width:402px">Write the command to run all models that select from Snowplow sources.</td><td id="tX[@" class="" style="width:408px"><code>dbt run --select source:snowplow+</code></td></tr><tr id="28d06831-3337-412d-879f-12f1e42cc3ba"><td id="WpMj" class="" style="width:402px">Write the command to run all models clustered by `client_id`</td><td id="tX[@" class="" style="width:408px"><code>dbt run -s config.cluster_by:client_id</code></td></tr><tr id="ffdaa15c-2a14-412f-a80e-2ebb6b6f1a44"><td id="WpMj" class="" style="width:402px">T|F Selectors are defined in the dbt_project.yml file.</td><td id="tX[@" class="" style="width:408px">False. Selectors are defined in the selectors.yml file.</td></tr><tr id="e6e37789-1194-4730-b7c3-d150a9784e5c"><td id="WpMj" class="" style="width:402px">What are the required properties while defining a selector?</td><td id="tX[@" class="" style="width:408px">Name and Definition</td></tr><tr id="f87f7f00-c7db-4481-a108-ae4ae28ffd07"><td id="WpMj" class="" style="width:402px">What is the default mode of indirect_selection in a selectors.yml file?</td><td id="tX[@" class="" style="width:408px">Eager.</td></tr><tr id="7c1c0436-2260-4b25-8b37-ab2c1e66b755"><td id="WpMj" class="" style="width:402px">T|F Ephemeral models can be deferred.</td><td id="tX[@" class="" style="width:408px">False. Ephemeral models are never deferred, since they serve as &quot;passthroughs&quot; for other ref calls.</td></tr><tr id="6754c445-ff21-48b3-b0d7-289fdadf73cd"><td id="WpMj" class="" style="width:402px">T|F Deferral requires both <code>--defer</code> and <code>--state</code> flags to be set.</td><td id="tX[@" class="" style="width:408px">True.</td></tr><tr id="40ea40c5-f673-4698-8dc2-876a825853f7"><td id="WpMj" class="" style="width:402px">What are the ways to set deferral?</td><td id="tX[@" class="" style="width:408px">1. By passing <code>--defer</code> and <code>--state</code> flags explicitly or 2. By setting environment variables (DBT_DEFER_TO_STATE and DBT_ARTIFACT_STATE_PATH).</td></tr><tr id="91443a25-da44-4085-8952-cad341421419"><td id="WpMj" class="" style="width:402px">model_b depends on model_a. While running <code>dbt build</code>, a unique test on model_a fails, will model_b be able to run?</td><td id="tX[@" class="" style="width:408px">No, model_b will be skipped.</td></tr><tr id="861252c4-a9b8-44de-8d4e-829b8a48ce85"><td id="WpMj" class="" style="width:402px">What does <code>dbt docs generate --no-compile</code> do?</td><td id="tX[@" class="" style="width:408px">It will generate everything else, but not the manifest (i.e. it will do the catalog and run_results)</td></tr><tr id="420fe5ce-6c70-49d4-9ce1-4ebeebd5d776"><td id="WpMj" class="" style="width:402px">How do you specify a different port while executing <code>dbt docs serve</code>?</td><td id="tX[@" class="" style="width:408px">By using the <code>--port</code> flag, i.e. <code>dbt docs serve --port 8001</code></td></tr><tr id="2a15138a-a95b-4186-bffd-9a08a9c8518a"><td id="WpMj" class="" style="width:402px">What purpose does <code>--config-dir</code> flag serve?</td><td id="tX[@" class="" style="width:408px">The <code>--config-dir</code> option to dbt debug will show you where your .dbt configuration directory is located.  Example: <code>dbt debug --config-dir</code></td></tr><tr id="79360e51-7f11-467b-a0bd-8f991469f9c9"><td id="WpMj" class="" style="width:402px">When dbt parse is run, the detailed timing information is written into which file?</td><td id="tX[@" class="" style="width:408px">target/perf_info.json</td></tr><tr id="03e03338-e7e5-42cb-924f-861bf03d794c"><td id="WpMj" class="" style="width:402px">What command is used to invoke a macro?</td><td id="tX[@" class="" style="width:408px"><code>dbt run-operation</code></td></tr><tr id="46a9d30d-38b3-4b56-99c0-4c57acdbc937"><td id="WpMj" class="" style="width:402px">When does the sources.json artifact get created?</td><td id="tX[@" class="" style="width:408px">When <code>dbt source freshness</code> command is invoked.</td></tr><tr id="94025be3-b671-4184-853c-54e623f1ad17"><td id="WpMj" class="" style="width:402px">By default, when <code>dbt source freshness</code> completes, a JSON file containing information about the freshness of your sources will be saved to?</td><td id="tX[@" class="" style="width:408px">target/source.json</td></tr><tr id="f94247e3-df8e-4c43-9fe9-927ec1790427"><td id="WpMj" class="" style="width:402px">To override the destination for this sources.json, what flag is used?</td><td id="tX[@" class="" style="width:408px">use the -o (or --output) flag,  i.e. <code>dbt source freshness --output target/file_name.json</code></td></tr><tr id="0e57838e-b853-4355-9d2f-0c6f80dceb52"><td id="WpMj" class="" style="width:402px">How will you list models materialized as views in json?</td><td id="tX[@" class="" style="width:408px">dbt ls -s config.materialized:view --output json</td></tr><tr id="b2ef8eef-182f-48fe-b6d2-023040e391a2"><td id="WpMj" class="" style="width:402px">T|F <code>-x</code> and <code>--fail-fast</code> flags are equivalent?</td><td id="tX[@" class="" style="width:408px">True. When used with <code>dbt run</code>, makes dbt exit immediately if a single resource fails to build.</td></tr><tr id="3524a66f-cd76-4944-af4d-3eb25d6be445"><td id="WpMj" class="" style="width:402px">What are the CLI global flags that supports dbt and it&#x27;s sub commands?</td><td id="tX[@" class="" style="width:408px"><code>dbt --version</code> 
+	<code>dbt -r </code>or --record-timing-info</td></tr><tr id="15b4cc82-be60-46d9-a22b-9eb53a33b6c9"><td id="WpMj" class="" style="width:402px">In which places, can a global config be set?</td><td id="tX[@" class="" style="width:408px">CLI Environment Variables Yaml configs (usually profiles.yml)</td></tr><tr id="5251f2ad-5b98-486b-9ab0-c6549817908c"><td id="WpMj" class="" style="width:402px">What config must be enabled for dbt to cache schemas related to selected resources for the current run ?</td><td id="tX[@" class="" style="width:408px">cache_selected_only</td></tr><tr id="9398b701-d297-438a-a98d-8dcb8d445914"><td id="WpMj" class="" style="width:402px">How will you disable --version-check config in CLI?</td><td id="tX[@" class="" style="width:408px"><code>dbt --no-version-check run</code></td></tr><tr id="1010f263-a212-4808-b5f1-d5610a3a1dca"><td id="WpMj" class="" style="width:402px">How will you enable <code>--cache-selected-only</code> config using yaml configs?</td><td id="tX[@" class="" style="width:408px">config:   cache_selected_only: true  The above code must be included in the profiles.yml file.</td></tr><tr id="0ffe80d5-1a42-4ba5-8553-4746bb3d66ca"><td id="WpMj" class="" style="width:402px">What happens when the below command is executed?  dbt -x run</td><td id="tX[@" class="" style="width:408px"><code>dbt run</code> will exit immediately if a single resource fails to build.   dbt -x run is equivalent to dbt --fail-fast run.</td></tr><tr id="b557fc02-c4ef-4080-b533-bd77c47868fc"><td id="WpMj" class="" style="width:402px">When do we use &#x27;quiet&#x27; config?</td><td id="tX[@" class="" style="width:408px">To show only error logs in stdout.</td></tr><tr id="783478e3-05d6-44ed-861a-6f6d50cf704c"><td id="WpMj" class="" style="width:402px">How will you stop dbt from writing json artifacts (eg. manifest.json, run_results.json) to the target/ directory ?</td><td id="tX[@" class="" style="width:408px">By disabling write_json config.</td></tr><tr id="c1544119-0ace-4d91-a820-0579d7600623"><td id="WpMj" class="" style="width:402px">What is the condition for exit code 0?</td><td id="tX[@" class="" style="width:408px">The dbt invocation completed without error.</td></tr><tr id="37d7cff9-343d-4feb-abef-168ab1d5dffa"><td id="WpMj" class="" style="width:402px">When will dbt trigger a full re-parsing?</td><td id="tX[@" class="" style="width:408px">If certain inputs change between runs,  --vars profiles.yml content (or env_var values used within) dbt_project.yml content (or env_var values used within) installed packages dbt version certain widely-used macros, e.g. builtins overrides or generate_x_name for database/schema/alias</td></tr><tr id="ad6d54b9-5a44-4e57-bb09-464acde188bd"><td id="WpMj" class="" style="width:402px">Different ways to optimize dbt performance?</td><td id="tX[@" class="" style="width:408px">- LibYAML bindings for PyYAML - Partial parsing, which avoids re-parsing unchanged files between invocations - An experimental parser, which extracts information from simple models much more quickly - RPC server, which keeps a manifest in memory, and re-parses the project at server startup/hangup</td></tr><tr id="93607c68-f0f6-4322-9c28-ef529d1680be"><td id="WpMj" class="" style="width:402px">After parsing the project, dbt stores an internal manifest in which file?</td><td id="tX[@" class="" style="width:408px">partial_parse.msgpack</td></tr><tr id="6a0299b7-17bb-4eec-b8b5-90783ad12c84"><td id="WpMj" class="" style="width:402px">T|F Every dbt project needs dbt_project.yml file.</td><td id="tX[@" class="" style="width:408px">True. — this is how dbt knows a directory is a dbt project. It also contains important information that tells dbt how to operate on your project.</td></tr><tr id="8255a974-ffb9-4a17-82cd-0f463aed88af"><td id="WpMj" class="" style="width:402px">T|F 555_xxx_reporting is an acceptable project name.</td><td id="tX[@" class="" style="width:408px">False - The name of a dbt project must be letters, digits and underscores only, and cannot start with a digit.</td></tr><tr id="7a0c38a2-a9b0-46c4-a989-e83c59b5614c"><td id="WpMj" class="" style="width:402px">How will you locate your seeds in a directory named &#x27;cust_seeds&#x27;?</td><td id="tX[@" class="" style="width:408px">By setting the seed-paths config to [&quot;cust_seeds&quot;] in the dbt_project.yml file.</td></tr><tr id="13af90bd-676b-4476-ba97-023a889468bd"><td id="WpMj" class="" style="width:402px">By default, dbt will look for doc blocks in which directory?</td><td id="tX[@" class="" style="width:408px">By default, dbt will search in all resource paths for docs blocks (i.e. the combined list of model-paths, seed-paths, analysis-paths, macro-paths and snapshot-paths). If this option is configured, dbt will only look in the specified directory for docs blocks.  Example: docs-paths: [&quot;docs&quot;]</td></tr><tr id="4481a543-86ff-4254-b584-b265ae6b5c2e"><td id="WpMj" class="" style="width:402px">What are the required arguments in a dispatch config?</td><td id="tX[@" class="" style="width:408px">dispatch:  
+	macro_namespace:  
+	search_order:</td></tr><tr id="ed96692a-8ce7-45a7-b6be-ca947a7f1163"><td id="WpMj" class="" style="width:402px">In which artifact the network representation of the dbt resource DAG is stored?</td><td id="tX[@" class="" style="width:408px">graph.gpickle</td></tr><tr id="2275291c-080b-4dd7-bd9b-66c22d3aad91"><td id="WpMj" class="" style="width:402px">catalog.json file is produced by?</td><td id="tX[@" class="" style="width:408px"><code>dbt docs generate</code></td></tr><tr id="ea6c383e-8f44-4595-b3a2-801128b765f4"><td id="WpMj" class="" style="width:402px">T|F run_results.json is produced by running <code>dbt ls</code> command?</td><td id="tX[@" class="" style="width:408px">False.</td></tr><tr id="4c48e23b-a0af-4a18-ae2c-56ab498867af"><td id="WpMj" class="" style="width:402px">index.html is produced by which command?</td><td id="tX[@" class="" style="width:408px"><code>dbt docs generate</code></td></tr><tr id="1e2418ea-802c-4941-92dd-606bd938fb45"><td id="WpMj" class="" style="width:402px">A user is currently working on a branch named &quot;feature_a&quot; and realizes the work done on this branch is no longer necessary, hence no merging is required. He performs the following steps,  
+	- <code>git checkout main</code> 
+	- <code>git branch -d feature_a</code>
+	What is the end result?</td><td id="tX[@" class="" style="width:408px">The user will receive an error message: 
+	&quot;The branch &#x27;feature_a&#x27; is not fully merged. If you are sure you want to delete it, run <code>git branch -D feature_a</code>.</td></tr><tr id="b9e232e7-dc19-4318-91b2-ed08def6964f"><td id="WpMj" class="" style="width:402px">A user is currently working on a branch &#x27;feature_products&#x27; and realizes that the word feature is misspelt. How will the user modify the branch name?</td><td id="tX[@" class="" style="width:408px">The user will run the following command,  <code>git branch -m feature_products</code></td></tr><tr id="2446dd49-4f38-41ba-937c-174b2705cbf6"><td id="WpMj" class="" style="width:402px">How will you list all remote branches in CLI?</td><td id="tX[@" class="" style="width:408px"><code>git branch -r</code></td></tr><tr id="49809a4d-5d76-4e75-b28a-dfd8d51193aa"><td id="WpMj" class="" style="width:402px">T|F Running <code>git branch --ls</code> is one of the ways to list local branches.</td><td id="tX[@" class="" style="width:408px">False. <code>git branch --ls</code> is an invalid command.   <code>git branch</code> or <code>git branch --list</code> .  These are the two ways to list local branches.</td></tr><tr id="c1a094cc-6fe2-4a23-9a68-7fe37325ddf4"><td id="WpMj" class="" style="width:402px">T|F A user can create a branch using <code>git branch &lt;branchname&gt;</code> and start adding commits right away?</td><td id="tX[@" class="" style="width:408px">False. The command only creates a branch but doesn&#x27;t select it.   The user need to select the branch by running  <code>git checkout &lt;branchname&gt;</code> and then add commits.</td></tr><tr id="27679994-dfa6-4246-b329-309d1f56c24d"><td id="WpMj" class="" style="width:402px">A user stage changes by running the &#x27;git add .&#x27; command. Staged files were, dim_products.sql dim_orders.sql  Now, the user wants to unstage &#x27;dim_orders.sql&#x27; file alone, what command does the user needs to run?</td><td id="tX[@" class="" style="width:408px"><code>git reset dim_orders</code></td></tr><tr id="791253d4-4b6d-4b4b-b860-2aadc82b9c15"><td id="WpMj" class="" style="width:402px">How can a user add and commit files at the same?</td><td id="tX[@" class="" style="width:408px">By using the -am flag in <code>git commit</code> command,  i.e. <code>git commit -am &quot;commit message&quot;</code> or <code>git commit -a -m &quot;commit message&quot;</code></td></tr><tr id="ac6eceb7-94ba-4a09-92d0-7367f5b6254e"><td id="WpMj" class="" style="width:402px">A user has made two commits and hasn&#x27;t pushed the commits to the remote repository yet. Now, the user wants to un-commit the changes. What is the user supposed to do?</td><td id="tX[@" class="" style="width:408px"><code>git reset HEAD~2</code> (Removes the commit from project history)</td></tr><tr id="6bc82566-6bdb-436a-87f4-8235e6d2ded0"><td id="WpMj" class="" style="width:402px">What are the two components of Grants config?</td><td id="tX[@" class="" style="width:408px">Privilege and Grantees</td></tr></tbody></table></div></details></div></article></body></html>
